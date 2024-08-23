@@ -17,7 +17,7 @@ const PlasioViewer = ({ lasFileUrl }) => {
   return (
     <>
       <Head>
-        <script src="https://cdn.plasio.io/plasio.js" />
+        <script src="https://cdn.plasio.io/plasio.js" async/>
       </Head>
       <div ref={viewerRef} style={{ width: '100%', height: '600px' }}></div>
     </>

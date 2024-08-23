@@ -11,8 +11,7 @@ const UploadFile = () => {
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
-    setErrorMessage(null); // Clear any previous error
-  };
+    setErrorMessage(null);
 
   const handleFileUpload = async () => {
     if (!file) {
@@ -37,7 +36,7 @@ const UploadFile = () => {
   };
 
   const handleViewFile = () => {
-    window.open(lasFileUrl, '_blank'); // Open in new tab
+    window.open(lasFileUrl, '_blank'); 
   };
 
   return (
