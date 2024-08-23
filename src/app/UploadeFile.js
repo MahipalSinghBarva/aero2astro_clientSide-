@@ -34,7 +34,7 @@ const UploadFile = () => {
       setLoading(false);
     }
   };
-
+  }
   const handleViewFile = () => {
     window.open(lasFileUrl, '_blank'); 
   };
