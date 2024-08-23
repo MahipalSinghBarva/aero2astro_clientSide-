@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LAS File Viewer Application
 
-## Getting Started
+This project is a full-stack LAS File Viewer that allows users to upload LAS files and view them in a web browser. The application consists of a backend server built with Node.js and Express, and a frontend built with React and Next.js. The frontend is hosted on Vercel, and the backend is hosted on Render.
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Frontend**: [https://aero2astro-client-side.vercel.app/](https://aero2astro-client-side.vercel.app/)
+- **Backend**: [https://aero2astro-serverside1.onrender.com/](https://aero2astro-serverside1.onrender.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
+- **React**
+- **Next.js**
+- **Tailwind CSS** for styling
+- **Axios** for API calls
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Backend
+- **Node.js**
+- **Express**
+- **MongoDB** with **GridFS** for file storage
+- **Multer** for file uploads
+- **CORS** for cross-origin requests
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Users can upload LAS files.
+- Files are stored in MongoDB using GridFS.
+- Files can be retrieved and viewed using Plasio in the frontend.
+- The frontend provides error handling, loading states, and user-friendly feedback.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setup and Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Usage
+Visit the frontend application at https://aero2astro-client-side.vercel.app/.
+Upload a LAS file using the upload form.
+Once the file is uploaded, click the "View Uploaded File" button to view the LAS file in a new tab.
 
-## Deploy on Vercel
+API Endpoints
+Upload a LAS File
+URL: /api/upload
+Method: POST
+Request Body: Form-data with a file field.
+Response: { "fileId": "<file-id>" }
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Retrieve a LAS File
+URL: /api/las/:fileId
+Method: GET
+Description: Retrieves and streams a LAS file from MongoDB GridFS.
